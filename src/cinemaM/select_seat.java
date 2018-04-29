@@ -20,6 +20,7 @@ public class select_seat extends JFrame {
 
 	private JPanel contentPane;
 
+	
 	/**
 	 * Launch the application.
 	 */
@@ -495,6 +496,21 @@ public class select_seat extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JButton btnConfrim = new JButton("\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E01\u0E32\u0E23\u0E40\u0E25\u0E37\u0E2D\u0E01");
+		btnConfrim.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				for(int i =0;i<35;i++) {
+					
+					if(selected[i] != null) {
+						String seat_num = selected[i].substring(4, 6);
+						seat_num = seat_num.replaceAll(" ", "");
+						System.out.println(seat_num);
+						int seat_no = Integer.parseInt(seat_num);
+						theater.booking(seat_no, showtime);
+					}
+					
+				}
+			}
+		});
 		btnConfrim.setBounds(578, 488, 127, 25);
 		contentPane.add(btnConfrim);
 		
@@ -508,10 +524,8 @@ public class select_seat extends JFrame {
 		btn_Cancel.setBackground(new Color(255, 0, 0));
 		btn_Cancel.setBounds(118, 429, 127, 25);
 		contentPane.add(btn_Cancel);
-
-		
-		
-		
-		 
+ 
 	}
+	
+	
 }
