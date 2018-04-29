@@ -498,6 +498,7 @@ public class select_seat extends JFrame {
 		JButton btnConfrim = new JButton("\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19\u0E01\u0E32\u0E23\u0E40\u0E25\u0E37\u0E2D\u0E01");
 		btnConfrim.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int seat=0;
 				for(int i =0;i<35;i++) {
 					
 					if(selected[i] != null) {
@@ -506,9 +507,12 @@ public class select_seat extends JFrame {
 						System.out.println(seat_num);
 						int seat_no = Integer.parseInt(seat_num);
 						theater.booking(seat_no, showtime);
+						seat++;
 					}
-					
 				}
+				Booking bnk = new Booking(seat);
+				bnk.setVisible(true);
+				
 			}
 		});
 		btnConfrim.setBounds(578, 488, 127, 25);

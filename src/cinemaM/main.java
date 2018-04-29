@@ -23,7 +23,8 @@ public class main {
 		theater[0] = new theater(1);
 		theater[1] = new theater(2);
 		movielist_ui ui = new movielist_ui(flims,theater);
-		ui.setVisible(true);	
+		ui.setVisible(true);
+
 	}
 	
 	
