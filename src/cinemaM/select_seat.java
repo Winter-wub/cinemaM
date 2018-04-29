@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JTextArea;
-
+import javax.swing.JOptionPane;
 
 public class select_seat extends JFrame {
 
@@ -500,8 +500,8 @@ public class select_seat extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int seat=0;
 				for(int i =0;i<35;i++) {
-					
-					if(selected[i] != null) {
+					try {
+						if(selected[i] != null) {
 						String seat_num = selected[i].substring(4, 6);
 						seat_num = seat_num.replaceAll(" ", "");
 						System.out.println(seat_num);
@@ -509,6 +509,10 @@ public class select_seat extends JFrame {
 						theater.booking(seat_no, showtime);
 						seat++;
 					}
+					}catch(Exception ex) {
+						JOptionPane.showMessageDialog(null, "ข้อผิดพลาด", "ที่ไม่สามารถระบุ " , JOptionPane.INFORMATION_MESSAGE);
+					}
+					
 				}
 				Booking bnk = new Booking(seat);
 				bnk.setVisible(true);
