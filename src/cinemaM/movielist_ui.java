@@ -30,7 +30,7 @@ public class movielist_ui extends JFrame {
 	public movielist_ui(flims[] flims,theater[] theater) throws IOException {
 		this.flims = flims;
 		this.theater = theater;
-		BufferedImage pic = ImageIO.read(new File("1.jpg"));
+		//BufferedImage pic = ImageIO.read(new File("1.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 843, 529);
 		contentPane = new JPanel();
@@ -38,7 +38,7 @@ public class movielist_ui extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton film0 = new JButton("ดูรอบ");
+		JButton film0 = new JButton("รอบฉาย");
 		film0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				showtime_ui s_ui = new showtime_ui(flims[0],theater[0]);
@@ -48,13 +48,13 @@ public class movielist_ui extends JFrame {
 		film0.setBounds(59, 203, 97, 25);
 		contentPane.add(film0);
 		
-		JButton flim1 = new JButton("ดูรอบ");
+		JButton flim1 = new JButton("รอบฉาย");
 		flim1.setBounds(279, 203, 97, 25);
 		contentPane.add(flim1);
 		
-		JLabel piclabel = new JLabel(new ImageIcon(pic));
+		/*JLabel piclabel = new JLabel(new ImageIcon(pic));
 		piclabel.setBounds(12, 13, 191, 177);
-		contentPane.add(piclabel);
+		contentPane.add(piclabel);*/
 		
 	}
 }
